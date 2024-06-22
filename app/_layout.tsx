@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
-import { Slot, SplashScreen, } from 'expo-router';
-import { useEffect } from 'react'; import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
+import { Slot, SplashScreen } from 'expo-router';
+import { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider } from 'tamagui';
 
 import config from '../tamagui.config';

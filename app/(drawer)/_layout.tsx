@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Drawer
       screenOptions={{
-        // headerShown: false,
+        headerShown: false,
         // drawerHideStatusBarOnOpen: true,
         drawerActiveBackgroundColor: colorTokens.dark.blue.blue7,
         drawerActiveTintColor: '#fff',
@@ -19,7 +19,7 @@ const Home = () => {
         name="home"
         options={{
           title: 'Movie List',
-          // headerShown: false,
+          headerShown: false,
           drawerIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
         }}
       />
@@ -27,7 +27,7 @@ const Home = () => {
         name="favorites"
         options={{
           title: 'My Favorites',
-          // headerShown: false,
+          headerShown: false,
           drawerIcon: ({ color, size }) => (
             <Ionicons name="star-outline" size={size} color={color} />
           ),

@@ -1,6 +1,7 @@
 import { Link } from 'expo-router';
 import React from 'react';
-import { Card, Image, YStack, Text, Paragraph } from 'tamagui';
+import Animated from 'react-native-reanimated';
+import { Card, YStack, Text, Paragraph } from 'tamagui';
 
 import { ResultItem } from '@/interfaces/apiresults';
 
@@ -22,10 +23,11 @@ const MovieCard = ({ movie }: MovieCardProps) => {
         pressStyle={{ scale: 0.975 }}
         animation="bouncy">
         <Card.Header p={0}>
-          <Image
+          <Animated.Image
             source={{ uri: `https://image.tmdb.org/t/p/w200/${movie.poster_path}` }}
             alt={movie.title}
             style={{ width: 150, height: 200 }}
+            sharedTransitionTag={`${movie.media_type === 'movie' ? 'movie' : 'tv'}-${movie.id}`}
           />
         </Card.Header>
         <Card.Footer p={8}>
@@ -33,7 +35,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             <Text fontSize={12} color="lightblue">
               {movie.title || movie.name}
             </Text>
-            <Paragraph theme={'alt2'}>
+            <Paragraph theme="alt2">
               {new Date(movie.release_date! || movie.first_air_date!).getFullYear()}
             </Paragraph>
           </YStack>

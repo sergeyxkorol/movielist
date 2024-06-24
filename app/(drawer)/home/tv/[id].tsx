@@ -11,7 +11,7 @@ const Page = () => {
     return null;
   }
 
-  return <DetailsPage id={id} mediaType={MediaType.Movie} />;
+  return <DetailsPage id={id} mediaType={MediaType.TV} />;
 };
 
 export default Page;

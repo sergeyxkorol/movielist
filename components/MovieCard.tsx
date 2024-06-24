@@ -11,7 +11,7 @@ type MovieCardProps = {
 const MovieCard = ({ movie }: MovieCardProps) => {
   return (
     <Link
-      href={`/(drawer)/home/${movie.media_type === 'movie' ? 'movie' : 'movie'}/${movie.id}`}
+      href={`/(drawer)/home/${movie.media_type === 'movie' ? 'movie' : 'tv'}/${movie.id}`}
       asChild>
       <Card
         elevate

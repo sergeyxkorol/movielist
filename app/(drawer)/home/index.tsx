@@ -51,7 +51,7 @@ const Home = () => {
         </Container>
       </ImageBackground>
 
-      <Subtitle p={10}>Trending</Subtitle>
+      <Subtitle p={10}>{searchQuery.data?.results ? 'Search results' : 'Trending'}</Subtitle>
 
       {trendingQuery.isLoading ||
         (searchQuery.isLoading && <Spinner size="large" color="$blue10" />)}
@@ -61,7 +61,9 @@ const Home = () => {
         showsHorizontalScrollIndicator={false}
         py={40}
         contentContainerStyle={{ gap: 14, paddingLeft: 14 }}>
-        {trendingQuery.data?.results?.map(item => <MovieCard key={item.id} movie={item} />)}
+        {searchQuery.data?.results
+          ? searchQuery.data?.results?.map(item => <MovieCard key={item.id} movie={item} />)
+          : trendingQuery.data?.results?.map(item => <MovieCard key={item.id} movie={item} />)}
       </ScrollView>
     </Main>
   );
